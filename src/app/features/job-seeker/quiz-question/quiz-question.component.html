@@ -1,0 +1,95 @@
+<div class="h-screen dark:text-white flex justify-center items-center">
+<!--  <div class="absolute rounded-lg w-full h-full top-0 right-0 z-0 opacity-10">-->
+<!--    <img ngSrc="/assets/image/quiz/questionBa.jpg" fill class="h-screen w-full opacity-50" alt="bg-image"/>-->
+<!--  </div>-->
+  <div class="fixed top-7 left-7">
+    Question Type
+  </div>
+  <div class="fixed top-7 right-7">
+    Question Number
+  </div>
+  <div class="relative container mx-auto grid grid-cols-1 md:grid-cols-5 px-4 md:px-20 xl:px-72 w-full">
+    <div
+      class="relative col-span-1 md:col-span-5 h-fit w-full px-8 py-4 bg-white rounded-lg shadow dark:bg-gray-700 border border-gray-200 dark:border-gray-700">
+      <div class="absolute rounded-lg w-full h-full top-0 right-0 z-10 opacity-50">
+        <img ngSrc="/assets/image/quiz/quizePatternImage.jpeg" fill class="h-screen w-full" alt="bg-image"/>
+      </div>
+      <div class="relative z-20">
+        <div class="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+          <app-timer></app-timer>
+        </div>
+        <div class="flex justify-between mb-20 md:mb-0">
+          <div class="flex items-center gap-2">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                 style="fill: rgb(89, 0, 255)">
+              <path
+                d="M12.25 2c-5.514 0-10 4.486-10 10s4.486 10 10 10 10-4.486 10-10-4.486-10-10-10zM18 13h-6.75V6h2v5H18v2z">
+              </path>
+            </svg>
+            <p class="text-lg flex justify-center items-center gap-3 font-medium">
+              {{question.time}}
+              <span class="text-sm">
+              Seconds
+            </span>
+            </p>
+          </div>
+          <div class="quiz__title text-center w-full">
+            <!-- Quiz Title -->
+          </div>
+          <div class="flex items-center gap-2">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                 style="fill: rgb(89, 0, 255)">
+              <path
+                d="M4 11h6a1 1 0 0 0 1-1V4a1 1 0 0 0-1-1H4a1 1 0 0 0-1 1v6a1 1 0 0 0 1 1zm10 0h6a1 1 0 0 0 1-1V4a1 1 0 0 0-1-1h-6a1 1 0 0 0-1 1v6a1 1 0 0 0 1 1zM4 21h6a1 1 0 0 0 1-1v-6a1 1 0 0 0-1-1H4a1 1 0 0 0-1 1v6a1 1 0 0 0 1 1zm13 0c2.206 0 4-1.794 4-4s-1.794-4-4-4-4 1.794-4 4 1.794 4 4 4z">
+              </path>
+            </svg>
+            <p class="text-lg flex justify-center items-center gap-3 font-medium">
+              1/10
+              <span class="text-sm">
+              Questions
+            </span>
+            </p>
+          </div>
+        </div>
+        <!-- question -->
+        <div class="sm:py-10 py-5 md:pt-20">
+          <div class="flex justify-center">
+            <img src="https://skills.thijs.gg/icons?i=java" class="w-16 h-16 md:w-20 md:h-20" alt="Question media">
+          </div>
+          <div class="sm:my-7">
+            <div class="pb-10">
+              <p class="text-2xl font-semibold text-center">
+                {{question.text}}
+              </p>
+            </div>
+            <div class="grid sm:grid-cols-2 gap-6">
+              <!-- true / false -->
+              <!-- <button
+                  class="response col-span-1 w-full px-6 py-2 bg-error text-white text-lg font-medium rounded">True</button>
+              <button routerLink="/user/quiz/java"
+                  class="response col-span-1 w-full px-6 py-2 bg-info text-white text-lg font-medium rounded">False</button> -->
+              <app-question-response *ngFor="let option of question.options" [option]="option"></app-question-response>
+            </div>
+          </div>
+        </div>
+        <div class="flex justify-end">
+          <button class="px-6 py-2 bg-blue-500 hover:bg-blue-700 text-white text-lg font-medium rounded">
+            Next
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    class="fixed bottom-0 w-screen h-16 flex items-center pl-4 bg-white">
+    <button class="flex items-center focus:outline-none" aria-label="toggle profile dropdown">
+      <div class="w-8 h-8 overflow-hidden border-2 border-gray-400 rounded-full">
+        <img ngSrc="assets/ts.jpg" class="object-cover w-full h-full" alt="avatar" height="2969" width="3000">
+      </div>
+      <div class="flex flex-col">
+        <h3 class="mx-2 hidden md:block">Ouharri</h3>
+        <h3 class="mx-2 hidden md:block">Outman</h3>
+      </div>
+    </button>
+  </div>
+</div>
