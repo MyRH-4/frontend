@@ -14,4 +14,5 @@ import {FishAnimationComponent} from "../fish-animation/fish-animation.component
 })
 export class NavBarComponent {
   @Input() IsOpen: Boolean = false;
+  authenticatedUser: any = JSON.parse(localStorage.getItem("googleData") || "{}");
 }
