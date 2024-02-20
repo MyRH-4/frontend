@@ -2,13 +2,14 @@
   <div [attr.data-theme]="'light'" [class]="night ? 'dark' : 'light'">
     <tui-theme-night *ngIf="night"></tui-theme-night>
     <div
-      class="bg-gray-100 h-screen flex flex-col min-w-full w-full dark:bg-gray-900 transition duration-300 ease-in-out relative"
+      class="bg-blue-50 h-screen flex flex-col min-w-full w-full dark:bg-gray-900 transition duration-300 ease-in-out relative"
     >
       <div class="h-full w-full z-40">
         <div class="w-full h-full">
           <div
-            class="overflow-y-auto w-full h-full scrollbar scrollbar-thumb-gray-200 scrollbar-track-gray-transparent">
-              <router-outlet></router-outlet>
+            class="overflow-y-auto w-full h-full scrollbar scrollbar-thumb-gray-200 scrollbar-track-gray-transparent"
+          >
+            <router-outlet></router-outlet>
           </div>
         </div>
       </div>
@@ -43,10 +44,6 @@
           />
         </label>
       </div>
-      <div
-        class="bg-gradient-to-b h-[30vh] opacity-20 absolute bottom-0 left-0 w-full z-0 from-transparent dark:from-black/10 to-yellow-300 dark:hidden"
-      ></div>
     </div>
   </div>
 </tui-root>
-
